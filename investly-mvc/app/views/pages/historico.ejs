@@ -1,0 +1,27 @@
+<%- include("../partials/head", { title: "Histórico", description: "Área do usuário Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/app-sidebar", { active: "financas" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="toolbar"><div><span class="eyebrow">Finanças</span><h1 style="font-size:2rem">Histórico</h1><p class="muted">Consulte suas movimentações.</p></div></div>
+        <div class="card card-pad">
+            <div class="table-wrap">
+                <table class="table">
+                    <thead><tr><th>Descrição</th><th>Categoria</th><th>Data</th><th>Tipo</th><th>Valor</th></tr></thead>
+                    <tbody>
+                    <% transacoes.forEach(item => { %>
+                        <tr><td><%= item.descricao %></td><td><%= item.categoria %></td><td><%= item.data %></td><td><%= item.tipo %></td>
+                        <td class="<%= item.valor >= 0 ? 'positive' : 'negative' %>"><%= item.valor >= 0 ? '+' : '−' %> R$ <%= Math.abs(item.valor).toFixed(2).replace('.', ',') %></td></tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/bottom-nav", { active: "financas" }) %>
+</div>
+<%- include("../partials/end") %>

@@ -1,0 +1,14 @@
+<aside class="sidebar">
+    <a class="brand" href="/admin" style="color:#fff">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        Investly
+    </a>
+    <nav class="sidebar-nav" aria-label="Menu administrativo">
+        <a class="<%= active === 'admin' ? 'active' : '' %>" href="/admin">⌂ &nbsp; Dashboard</a>
+        <a class="<%= active === 'usuarios' ? 'active' : '' %>" href="/admin/usuarios">♙ &nbsp; Usuários</a>
+        <a class="<%= active === 'conteudos' ? 'active' : '' %>" href="/admin/conteudos">A &nbsp; Conteúdos</a>
+        <a class="<%= active === 'categorias' ? 'active' : '' %>" href="/admin/categorias">▦ &nbsp; Categorias</a>
+        <a class="<%= active === 'config' ? 'active' : '' %>" href="/admin/configuracoes">⚙ &nbsp; Configurações</a>
+    </nav>
+    <div class="sidebar-bottom"><a href="/" style="color:#ffb2ad">↪ &nbsp; Sair do admin</a></div>
+</aside>

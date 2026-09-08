@@ -1,0 +1,17 @@
+<aside class="sidebar">
+    <a class="brand" href="/dashboard" style="color:#fff">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        Investly
+    </a>
+    <nav class="sidebar-nav" aria-label="Menu da conta">
+        <a class="<%= active === 'dashboard' ? 'active' : '' %>" href="/dashboard">⌂ &nbsp; Dashboard</a>
+        <a class="<%= active === 'financas' ? 'active' : '' %>" href="/financas">R$ &nbsp; Finanças</a>
+        <a class="<%= active === 'metas' ? 'active' : '' %>" href="/metas">◎ &nbsp; Metas</a>
+        <a class="<%= active === 'aprenda' ? 'active' : '' %>" href="/aprenda">A &nbsp; Aprenda</a>
+        <a class="<%= active === 'perfil' ? 'active' : '' %>" href="/perfil">♙ &nbsp; Perfil</a>
+    </nav>
+    <div class="sidebar-bottom">
+        <a href="/configuracoes" style="color:#dbe7ff">⚙ &nbsp; Configurações</a>
+        <a href="/" style="display:block;color:#ffb2ad;padding:12px">↪ &nbsp; Sair</a>
+    </div>
+</aside>

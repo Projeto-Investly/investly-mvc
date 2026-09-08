@@ -1,0 +1,26 @@
+<%- include("../partials/head", { title: "Usuários", description: "Administração do Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/admin-sidebar", { active: "usuarios" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="toolbar"><div><span class="eyebrow">Admin</span><h1 style="font-size:2rem">Usuários</h1><p class="muted">Visualize as contas cadastradas.</p></div></div>
+        <div class="card card-pad">
+            <div class="table-wrap">
+                <table class="table">
+                    <thead><tr><th>Usuário</th><th>E-mail</th><th>Cadastro</th><th>Status</th></tr></thead>
+                    <tbody>
+                    <% usuarios.forEach(item => { %>
+                        <tr><td><%= item.nome %></td><td><%= item.email %></td><td><%= item.cadastro %></td><td><span class="tag"><%= item.status %></span></td></tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/admin-bottom-nav", { active: "usuarios" }) %>
+</div>
+<%- include("../partials/end") %>

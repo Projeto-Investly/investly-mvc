@@ -1,0 +1,30 @@
+<%- include("../partials/head", { title: "Detalhe da meta", description: "Área do usuário Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/app-sidebar", { active: "metas" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="toolbar"><div><span class="eyebrow">Meta financeira</span><h1 style="font-size:2rem"><%= meta.nome %></h1><p class="muted">Acompanhe seu progresso.</p></div><a class="btn btn-secondary btn-sm" href="/metas">Voltar</a></div>
+        <div class="grid grid-2">
+            <div class="card card-pad">
+                <span class="stat-label">Progresso</span>
+                <strong style="font-size:2.2rem;display:block;margin:8px 0"><%= meta.progresso %>%</strong>
+                <div class="progress"><span style="width:<%= meta.progresso %>%"></span></div>
+                <p class="muted" style="margin-top:12px">R$ <%= meta.atual %> de R$ <%= meta.objetivo %></p>
+            </div>
+            <div class="card card-pad">
+                <h3>Detalhes</h3>
+                <div class="data-list">
+                    <div class="data-row"><span>Falta</span><strong>R$ <%= meta.objetivo - meta.atual %></strong></div>
+                    <div class="data-row"><span>Prazo</span><strong><%= meta.prazo %></strong></div>
+                    <div class="data-row"><span>Valor mensal sugerido</span><strong>R$ <%= meta.mensal %></strong></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/bottom-nav", { active: "metas" }) %>
+</div>
+<%- include("../partials/end") %>

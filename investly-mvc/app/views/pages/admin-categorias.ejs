@@ -1,0 +1,19 @@
+<%- include("../partials/head", { title: "Categorias", description: "Administração do Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/admin-sidebar", { active: "categorias" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="toolbar"><div><span class="eyebrow">Admin</span><h1 style="font-size:2rem">Categorias</h1><p class="muted">Organize os conteúdos da plataforma.</p></div></div>
+        <div class="grid grid-3">
+            <div class="card card-pad"><h3>Finanças pessoais</h3><p class="muted">Organização do dinheiro no dia a dia.</p></div>
+            <div class="card card-pad"><h3>Economia</h3><p class="muted">Conceitos econômicos fundamentais.</p></div>
+            <div class="card card-pad"><h3>Investimentos</h3><p class="muted">Conteúdo introdutório sobre investimentos.</p></div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/admin-bottom-nav", { active: "categorias" }) %>
+</div>
+<%- include("../partials/end") %>

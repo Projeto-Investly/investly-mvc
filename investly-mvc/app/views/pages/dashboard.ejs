@@ -1,0 +1,53 @@
+<%- include("../partials/head", { title: "Dashboard", description: "Área do usuário Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/app-sidebar", { active: "dashboard" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="greeting">
+            <div>
+                <span class="eyebrow">Resumo financeiro</span>
+                <h1 style="font-size:2rem;margin:12px 0 5px">Olá, <%= usuario.nome %>! 👋</h1>
+                <p class="muted">Veja como está sua vida financeira hoje.</p>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="/financas">Ver finanças</a>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="card stat"><span class="stat-label">Receitas</span><strong class="stat-value positive">R$ <%= resumo.receitas.toFixed(2).replace('.', ',') %></strong></div>
+            <div class="card stat"><span class="stat-label">Despesas</span><strong class="stat-value negative">R$ <%= resumo.despesas.toFixed(2).replace('.', ',') %></strong></div>
+            <div class="card stat"><span class="stat-label">Saldo</span><strong class="stat-value text-primary">R$ <%= resumo.saldo.toFixed(2).replace('.', ',') %></strong></div>
+            <div class="card stat"><span class="stat-label">Orçamento usado</span><strong class="stat-value"><%= resumo.orcamento %>%</strong><div class="progress orange"><span style="width:<%= resumo.orcamento %>%"></span></div></div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:16px">
+            <div class="card card-pad">
+                <div class="toolbar"><h3>Minhas metas</h3><a class="text-primary" href="/metas">Ver todas</a></div>
+                <% metas.slice(0,2).forEach(meta => { %>
+                    <div class="goal-card" style="margin-bottom:18px">
+                        <div class="goal-top"><span><%= meta.nome %></span><strong><%= meta.progresso %>%</strong></div>
+                        <div class="goal-amount">R$ <%= meta.atual %> de R$ <%= meta.objetivo %></div>
+                        <div class="progress"><span style="width:<%= meta.progresso %>%"></span></div>
+                    </div>
+                <% }) %>
+            </div>
+
+            <div class="card card-pad">
+                <div class="toolbar"><h3>Últimas transações</h3><a class="text-primary" href="/financas/historico">Ver todas</a></div>
+                <div class="data-list">
+                    <% transacoes.forEach(item => { %>
+                        <div class="data-row">
+                            <span><%= item.descricao %><br><small class="muted"><%= item.categoria %></small></span>
+                            <strong class="<%= item.valor >= 0 ? 'positive' : 'negative' %>"><%= item.valor >= 0 ? '+' : '−' %> R$ <%= Math.abs(item.valor).toFixed(2).replace('.', ',') %></strong>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/bottom-nav", { active: "dashboard" }) %>
+</div>
+<%- include("../partials/end") %>

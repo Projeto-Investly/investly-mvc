@@ -1,0 +1,26 @@
+<%- include("../partials/head", { title: "Criar meta", description: "Área do usuário Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/app-sidebar", { active: "metas" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="section-head"><span class="eyebrow">Metas</span><h1 style="font-size:2rem">Criar uma nova meta.</h1><p class="muted">Defina um objetivo, valor e prazo.</p></div>
+        <div class="card card-pad" style="max-width:720px">
+            <form method="post" action="/metas/nova">
+                <%- include("../partials/errors", { errors }) %>
+                <div class="form-group"><label for="title">Nome da meta</label><input id="title" name="title" value="<%= dados?.title || '' %>" required></div>
+                <div class="form-row">
+                    <div class="form-group"><label for="target">Valor objetivo</label><input id="target" name="target" type="number" step="0.01" value="<%= dados?.target || '' %>" required></div>
+                    <div class="form-group"><label for="current">Valor já guardado</label><input id="current" name="current" type="number" step="0.01" value="<%= dados?.current || '' %>"></div>
+                </div>
+                <div class="form-group"><label for="deadline">Prazo</label><input id="deadline" name="deadline" type="date" value="<%= dados?.deadline || '' %>" required></div>
+                <div style="display:flex;gap:10px"><a class="btn btn-secondary" href="/metas">Cancelar</a><button class="btn btn-orange" type="submit">Criar meta</button></div>
+            </form>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/bottom-nav", { active: "metas" }) %>
+</div>
+<%- include("../partials/end") %>

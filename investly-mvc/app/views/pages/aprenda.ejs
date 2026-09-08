@@ -1,0 +1,26 @@
+<%- include("../partials/head", { title: "Aprenda", description: "Investly — organização e educação financeira.", bodyClass: "" }) %>
+<%- include("../partials/header") %>
+<main id="main">
+
+<section class="section">
+<div class="container">
+    <div class="section-head">
+        <span class="eyebrow">Aprenda</span>
+        <h1>Entenda seu dinheiro.</h1>
+        <p class="muted">Conteúdos curtos sobre finanças pessoais, economia e investimentos.</p>
+    </div>
+    <div class="grid grid-3">
+        <% conteudos.forEach(conteudo => { %>
+        <a class="card card-pad" href="/aprenda/artigo">
+            <span class="tag"><%= conteudo.categoria %></span>
+            <h3 style="margin-top:14px"><%= conteudo.titulo %></h3>
+            <p class="muted"><%= conteudo.resumo %></p>
+        </a>
+        <% }) %>
+    </div>
+</div>
+</section>
+
+</main>
+<%- include("../partials/footer") %>
+<%- include("../partials/end") %>

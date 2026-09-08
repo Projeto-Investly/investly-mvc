@@ -1,0 +1,87 @@
+<%- include("../partials/head", { title: "Início", description: "Investly — organização e educação financeira.", bodyClass: "" }) %>
+<%- include("../partials/header") %>
+<main id="main">
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-copy">
+            <span class="eyebrow">Organize. Aprenda. Conquiste.</span>
+            <h1>Suas finanças <span class="text-primary">organizadas</span>, seu futuro construído<span class="text-orange">.</span></h1>
+            <p>Tenha mais controle sobre seu dinheiro, defina seus objetivos e aprenda sobre finanças de forma simples e prática.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="/cadastro">Começar agora</a>
+                <a class="btn btn-secondary" href="/como-funciona">Ver como funciona</a>
+            </div>
+            <div class="hero-note">✓ Gratuito para começar</div>
+        </div>
+
+        <div class="mockup" aria-label="Prévia do dashboard Investly">
+            <div class="phone">
+                <div class="phone-top">Olá, Guilherme! 👋</div>
+                <p class="muted">Resumo do mês</p>
+                <div class="phone-stat"><small>Receitas</small><strong class="positive">R$ 2.500,00</strong></div>
+                <div class="phone-stat"><small>Despesas</small><strong class="negative">R$ 1.850,00</strong></div>
+                <div class="phone-stat"><small>Saldo</small><strong class="text-primary">R$ 650,00</strong></div>
+                <div class="phone-stat">
+                    <small>Meta: notebook</small>
+                    <div class="progress orange"><span style="width:75%"></span></div>
+                    <small>75%</small>
+                </div>
+                <div class="phone-nav"><span>Início</span><span>Finanças</span><span>Metas</span><span>Aprenda</span><span>Perfil</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-strip">
+    <div class="container grid">
+        <div class="feature-item"><strong>Controle financeiro</strong><span>Registre receitas e despesas.</span></div>
+        <div class="feature-item"><strong>Metas</strong><span>Acompanhe seus objetivos.</span></div>
+        <div class="feature-item"><strong>Educação</strong><span>Aprenda sobre dinheiro.</span></div>
+        <div class="feature-item"><strong>Planejamento</strong><span>Tome decisões com mais clareza.</span></div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-head center">
+            <h2>Sua vida financeira em poucos passos.</h2>
+            <p class="muted">O Investly reúne ferramentas simples para organizar, entender e planejar suas finanças.</p>
+        </div>
+        <div class="grid grid-4">
+            <div class="step"><div class="step-number">01</div><h3>Organize</h3><p class="muted">Registre receitas e despesas.</p></div>
+            <div class="step"><div class="step-number">02</div><h3>Planeje</h3><p class="muted">Crie metas financeiras.</p></div>
+            <div class="step"><div class="step-number">03</div><h3>Aprenda</h3><p class="muted">Entenda conceitos importantes.</p></div>
+            <div class="step"><div class="step-number">04</div><h3>Acompanhe</h3><p class="muted">Veja sua evolução.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background:#fff">
+    <div class="container">
+        <div class="section-head"><h2>O essencial para cuidar melhor do seu dinheiro.</h2></div>
+        <div class="grid grid-3">
+            <a class="card card-pad" href="/financas"><div class="icon-box">R$</div><h3>Finanças</h3><p class="muted">Veja para onde seu dinheiro vai.</p></a>
+            <a class="card card-pad" href="/metas"><div class="icon-box">◎</div><h3>Metas</h3><p class="muted">Transforme planos em objetivos.</p></a>
+            <a class="card card-pad" href="/aprenda"><div class="icon-box">A</div><h3>Aprenda</h3><p class="muted">Entenda finanças de forma simples.</p></a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cta-band">
+            <div class="grid grid-2" style="align-items:center">
+                <div>
+                    <h2>Comece a cuidar melhor das suas finanças hoje.</h2>
+                    <p>Organize seu dinheiro, defina seus objetivos e desenvolva seu conhecimento financeiro.</p>
+                </div>
+                <div><a class="btn btn-orange" href="/cadastro">Criar minha conta</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+<%- include("../partials/footer") %>
+<%- include("../partials/end") %>

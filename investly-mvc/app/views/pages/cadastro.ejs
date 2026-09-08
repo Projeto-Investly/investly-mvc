@@ -1,0 +1,26 @@
+<%- include("../partials/head", { title: "Criar conta", description: "Acesso ao Investly", bodyClass: "auth-page" }) %>
+<main id="main" class="auth-shell">
+    <%- include("../partials/auth-aside") %>
+    <section class="auth-form">
+        <a class="brand auth-logo" href="/">
+            <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            Investly
+        </a>
+
+        <h2>Criar sua conta</h2>
+        <p class="muted">Comece a organizar sua vida financeira.</p>
+        <form method="post" action="/cadastro" style="margin-top:24px">
+            <%- include("../partials/errors", { errors }) %>
+            <div class="form-group"><label for="name">Nome completo</label><input id="name" name="name" value="<%= dados?.name || '' %>" required></div>
+            <div class="form-group"><label for="email">E-mail</label><input id="email" name="email" type="email" value="<%= dados?.email || '' %>" required></div>
+            <div class="form-row">
+                <div class="form-group"><label for="password">Senha</label><input id="password" name="password" type="password" required></div>
+                <div class="form-group"><label for="confirm">Confirmar senha</label><input id="confirm" name="confirm" type="password" required></div>
+            </div>
+            <button class="btn btn-orange btn-block" type="submit">Criar conta</button>
+        </form>
+        <p class="center muted" style="margin-top:20px">Já tem uma conta? <a class="text-primary" href="/login"><strong>Entrar</strong></a></p>
+
+    </section>
+</main>
+<%- include("../partials/end") %>

@@ -1,0 +1,18 @@
+<%- include("../partials/head", { title: "Configurações do admin", description: "Administração do Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/admin-sidebar", { active: "config" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="section-head"><span class="eyebrow">Admin</span><h1 style="font-size:2rem">Configurações</h1><p class="muted">Preferências gerais da plataforma.</p></div>
+        <div class="card card-pad" style="max-width:720px">
+            <div class="form-group"><label for="site">Nome da plataforma</label><input id="site" value="Investly"></div>
+            <button class="btn btn-primary" type="button">Salvar</button>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/admin-bottom-nav", { active: "config" }) %>
+</div>
+<%- include("../partials/end") %>

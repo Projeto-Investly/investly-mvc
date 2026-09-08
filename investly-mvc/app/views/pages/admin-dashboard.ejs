@@ -1,0 +1,29 @@
+<%- include("../partials/head", { title: "Admin", description: "Administração do Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/admin-sidebar", { active: "admin" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="toolbar">
+            <div><span class="eyebrow">Administração</span><h1 style="font-size:2rem">Visão geral</h1><p class="muted">Acompanhe o conteúdo e os usuários da plataforma.</p></div>
+            <span class="admin-badge">ADMIN</span>
+        </div>
+        <div class="kpi-grid">
+            <div class="card stat"><span class="stat-label">Usuários</span><strong class="stat-value"><%= totalUsuarios %></strong></div>
+            <div class="card stat"><span class="stat-label">Conteúdos</span><strong class="stat-value"><%= totalConteudos %></strong></div>
+            <div class="card stat"><span class="stat-label">Categorias</span><strong class="stat-value"><%= totalCategorias %></strong></div>
+        </div>
+        <div class="card card-pad" style="margin-top:16px">
+            <h3>Ações rápidas</h3>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <a class="btn btn-primary btn-sm" href="/admin/usuarios">Gerenciar usuários</a>
+                <a class="btn btn-secondary btn-sm" href="/admin/conteudos">Gerenciar conteúdos</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/admin-bottom-nav", { active: "admin" }) %>
+</div>
+<%- include("../partials/end") %>

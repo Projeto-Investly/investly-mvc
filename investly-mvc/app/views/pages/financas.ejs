@@ -1,0 +1,48 @@
+<%- include("../partials/head", { title: "Finanças", description: "Área do usuário Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/app-sidebar", { active: "financas" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="toolbar">
+            <div>
+                <span class="eyebrow">Finanças</span>
+                <h1 style="font-size:2rem;margin:10px 0 4px">Controle seu dinheiro.</h1>
+                <p class="muted">Acompanhe receitas, despesas e seu saldo.</p>
+            </div>
+            <div style="display:flex;gap:8px">
+                <a class="btn btn-primary btn-sm" href="/financas/receitas/nova">+ Receita</a>
+                <a class="btn btn-orange btn-sm" href="/financas/despesas/nova">+ Despesa</a>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="card stat"><span class="stat-label">Receitas</span><strong class="stat-value positive">R$ <%= resumo.receitas.toFixed(2).replace('.', ',') %></strong></div>
+            <div class="card stat"><span class="stat-label">Despesas</span><strong class="stat-value negative">R$ <%= resumo.despesas.toFixed(2).replace('.', ',') %></strong></div>
+            <div class="card stat"><span class="stat-label">Saldo</span><strong class="stat-value text-primary">R$ <%= resumo.saldo.toFixed(2).replace('.', ',') %></strong></div>
+            <div class="card stat"><span class="stat-label">Transações</span><strong class="stat-value"><%= resumo.transacoes %></strong></div>
+        </div>
+
+        <div class="card card-pad" style="margin-top:16px">
+            <div class="toolbar"><h3>Movimentações recentes</h3><a class="btn btn-secondary btn-sm" href="/financas/historico">Ver histórico</a></div>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead><tr><th>Descrição</th><th>Categoria</th><th>Data</th><th>Valor</th></tr></thead>
+                    <tbody>
+                    <% transacoes.forEach(item => { %>
+                        <tr>
+                            <td><%= item.descricao %></td><td><%= item.categoria %></td><td><%= item.data %></td>
+                            <td class="<%= item.valor >= 0 ? 'positive' : 'negative' %>"><%= item.valor >= 0 ? '+' : '−' %> R$ <%= Math.abs(item.valor).toFixed(2).replace('.', ',') %></td>
+                        </tr>
+                    <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/bottom-nav", { active: "financas" }) %>
+</div>
+<%- include("../partials/end") %>

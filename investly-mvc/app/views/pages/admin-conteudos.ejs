@@ -1,0 +1,19 @@
+<%- include("../partials/head", { title: "Conteúdos", description: "Administração do Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/admin-sidebar", { active: "conteudos" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="toolbar"><div><span class="eyebrow">Admin</span><h1 style="font-size:2rem">Conteúdos</h1><p class="muted">Visualize os materiais educacionais.</p></div><button class="btn btn-orange btn-sm" type="button">+ Novo conteúdo</button></div>
+        <div class="grid grid-3">
+        <% conteudos.forEach(item => { %>
+            <div class="card card-pad"><span class="tag"><%= item.categoria %></span><h3 style="margin-top:12px"><%= item.titulo %></h3><p class="muted"><%= item.resumo %></p><button class="btn btn-secondary btn-sm" type="button">Editar</button></div>
+        <% }) %>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/admin-bottom-nav", { active: "conteudos" }) %>
+</div>
+<%- include("../partials/end") %>

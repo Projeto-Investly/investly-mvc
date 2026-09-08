@@ -1,0 +1,29 @@
+<%- include("../partials/head", { title: "Entrar", description: "Acesso ao Investly", bodyClass: "auth-page" }) %>
+<main id="main" class="auth-shell">
+    <%- include("../partials/auth-aside") %>
+    <section class="auth-form">
+        <a class="brand auth-logo" href="/">
+            <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            Investly
+        </a>
+
+        <h2>Entrar na sua conta</h2>
+        <p class="muted">Continue cuidando do seu futuro financeiro.</p>
+        <form method="post" action="/login" style="margin-top:24px">
+            <%- include("../partials/errors", { errors }) %>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" autocomplete="email" value="<%= dados?.email || '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="auth-links"><span></span><a href="/recuperar-senha">Esqueci minha senha</a></div>
+            <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+        </form>
+        <p class="center muted" style="margin-top:20px">Não tem uma conta? <a class="text-primary" href="/cadastro"><strong>Criar conta</strong></a></p>
+
+    </section>
+</main>
+<%- include("../partials/end") %>

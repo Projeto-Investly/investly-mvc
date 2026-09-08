@@ -1,0 +1,18 @@
+<%- include("../partials/head", { title: "Configurações", description: "Área do usuário Investly", bodyClass: "app-body" }) %>
+<div class="app-shell">
+<%- include("../partials/app-sidebar", { active: "perfil" }) %>
+<%- include("../partials/app-header", { usuario }) %>
+<main id="main" class="app-main">
+    <div class="container app-content">
+
+        <div class="section-head"><span class="eyebrow">Conta</span><h1 style="font-size:2rem">Configurações</h1><p class="muted">Controle preferências básicas da conta.</p></div>
+        <div class="grid grid-2">
+            <div class="card card-pad"><h3>Notificações</h3><label class="checkbox" style="margin:15px 0"><input type="checkbox" checked><span>Receber lembretes sobre minhas metas</span></label><label class="checkbox"><input type="checkbox" checked><span>Receber dicas educacionais</span></label></div>
+            <div class="card card-pad"><h3>Segurança</h3><p class="muted">Atualize sua senha quando necessário.</p><a class="btn btn-secondary" href="/recuperar-senha">Alterar senha</a></div>
+        </div>
+
+    </div>
+</main>
+<%- include("../partials/bottom-nav", { active: "perfil" }) %>
+</div>
+<%- include("../partials/end") %>

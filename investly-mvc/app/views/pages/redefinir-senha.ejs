@@ -1,0 +1,21 @@
+<%- include("../partials/head", { title: "Redefinir senha", description: "Acesso ao Investly", bodyClass: "auth-page" }) %>
+<main id="main" class="auth-shell">
+    <%- include("../partials/auth-aside") %>
+    <section class="auth-form">
+        <a class="brand auth-logo" href="/">
+            <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            Investly
+        </a>
+
+        <h2>Defina uma nova senha</h2>
+        <p class="muted">Escolha uma nova senha para sua conta.</p>
+        <form method="post" action="/redefinir-senha" style="margin-top:24px">
+            <%- include("../partials/errors", { errors }) %>
+            <div class="form-group"><label for="password">Nova senha</label><input id="password" name="password" type="password" required></div>
+            <div class="form-group"><label for="confirm">Confirmar nova senha</label><input id="confirm" name="confirm" type="password" required></div>
+            <button class="btn btn-primary btn-block" type="submit">Salvar nova senha</button>
+        </form>
+
+    </section>
+</main>
+<%- include("../partials/end") %>
